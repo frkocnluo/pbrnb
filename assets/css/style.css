@@ -1,5 +1,5 @@
 /* ============================================================
-   PBRNB — 另类 R&B 乐评档案
+   ALTERNATIVE R&B（仓库名 pbrnb）— 另类 R&B 乐评档案
    设计系统 / design system
    Palette : midnight ink + electric violet + neon magenta + PBR amber
    Type    : high-contrast display serif + neutral sans + mono accents
@@ -129,8 +129,8 @@ p { margin: 0 0 1.1em; }
   animation: spin 5s linear infinite;
 }
 .brand__word {
-  font-family: var(--mono); font-size: .82rem; letter-spacing: .34em;
-  text-transform: uppercase;
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .2em;
+  text-transform: uppercase; white-space: nowrap;
 }
 .brand__word b { color: var(--magenta); font-weight: 500; }
 .nav { display: flex; gap: clamp(.5rem, 2vw, 1.5rem); align-items: center; }
@@ -182,23 +182,25 @@ p { margin: 0 0 1.1em; }
   position: relative; display: grid; gap: clamp(2rem, 5vw, 3.5rem);
   grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center;
 }
+/* 栅格子项默认 min-width:auto 会被内容顶宽，导致窄屏横向溢出 */
+.hero__grid > * { min-width: 0; }
 .hero__kicker {
   font-family: var(--mono); font-size: .7rem; letter-spacing: .3em; text-transform: uppercase;
   color: var(--amber); margin-bottom: 1.3rem;
 }
 .hero__title {
   font-family: var(--serif); font-weight: 400;
-  font-size: clamp(4.2rem, 16vw, 11.5rem); line-height: .82; letter-spacing: -.045em;
+  font-size: clamp(2.3rem, 6.4vw, 5.4rem); line-height: .98; letter-spacing: -.01em;
   margin: 0 0 .1em;
 }
 .hero__title em {
-  font-style: italic;
+  display: block; line-height: .92; font-style: italic;
   background: linear-gradient(100deg, var(--violet-soft), var(--magenta) 55%, var(--amber));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .hero__title .sub {
-  display: block; margin-top: .5em;
-  font-size: clamp(1.05rem, 2.7vw, 1.85rem); letter-spacing: .06em; font-style: italic;
+  display: block; margin-top: .7em;
+  font-size: clamp(.95rem, 1.9vw, 1.35rem); letter-spacing: .06em; font-style: italic;
   color: var(--bone-2); -webkit-text-fill-color: currentColor;
 }
 .hero__lede {
@@ -212,10 +214,15 @@ p { margin: 0 0 1.1em; }
 }
 .hero__meta b { display: block; font-family: var(--serif); font-size: 1.6rem; letter-spacing: 0; color: var(--bone); font-weight: 400; }
 
-/* vinyl */
-.vinyl { position: relative; aspect-ratio: 1; display: grid; place-items: center; }
+/* vinyl —— 盘面用绝对定位撑满容器。
+   注意：这里不能用 place-items:center —— 该属性同样作用于绝对定位子元素，
+   会把 inset:0 的拉伸覆盖成「按内容居中」，导致盘面塌成 0 宽。 */
+.vinyl {
+  position: relative; aspect-ratio: 1; width: 100%; max-width: min(100%, 30rem);
+  margin-inline: auto;
+}
 .vinyl__disc {
-  width: 100%; border-radius: 50%;
+  position: absolute; inset: 0; border-radius: 50%;
   background:
     radial-gradient(circle at 50% 50%, var(--amber) 0 7%, #120d05 7% 8.4%, transparent 8.4%),
     repeating-radial-gradient(circle at 50% 50%, #191428 0 2px, #332a4d 2px 4px, #120f1d 4px 7px);
@@ -225,7 +232,6 @@ p { margin: 0 0 1.1em; }
     inset 0 0 0 1px rgba(244, 239, 230, .09),
     inset 0 0 80px rgba(0, 0, 0, .85);
   animation: spin 14s linear infinite;
-  position: relative;
 }
 .vinyl__disc::after {
   content: ""; position: absolute; inset: 0; border-radius: 50%;
@@ -234,6 +240,7 @@ p { margin: 0 0 1.1em; }
 }
 .vinyl__label {
   position: absolute; width: 34%; aspect-ratio: 1; border-radius: 50%;
+  top: 50%; left: 50%; margin: -17% 0 0 -17%;
   background: radial-gradient(circle at 34% 30%, var(--magenta), #7a0b3c 70%);
   display: grid; place-content: center; text-align: center; gap: .25rem;
   box-shadow: inset 0 0 30px rgba(0,0,0,.5);
@@ -441,7 +448,7 @@ a:hover > .cover--hover { transform: translateY(-6px) scale(1.012); box-shadow: 
 /* ---------- 13. footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: 3rem 0 2rem; margin-top: 4rem; }
 .footer__grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: flex-end; }
-.footer__word { font-family: var(--serif); font-size: clamp(2.6rem, 9vw, 6rem); line-height: .85; letter-spacing: -.05em; opacity: .16; }
+.footer__word { font-family: var(--serif); font-size: clamp(1.7rem, 5.4vw, 3.9rem); line-height: .88; letter-spacing: -.02em; opacity: .16; }
 .footer__meta { font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--bone-3); display: grid; gap: .4rem; }
 .footer__meta a { color: var(--bone-2); border-bottom: 1px solid var(--line); }
 .footer__meta a:hover { color: var(--magenta); }
@@ -461,22 +468,41 @@ a:hover > .cover--hover { transform: translateY(-6px) scale(1.012); box-shadow: 
 
 /* ---------- 15. responsive ---------- */
 @media (max-width: 1000px) {
-  .hero__grid { grid-template-columns: 1fr; }
-  .vinyl { max-width: 24rem; margin-inline: auto; order: -1; }
-  .featured { grid-template-columns: 1fr; }
-  .article__grid { grid-template-columns: 1fr; }
+  .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  .vinyl { order: -1; }
+  .featured { grid-template-columns: minmax(0, 1fr); }
+  .article__grid { grid-template-columns: minmax(0, 1fr); }
   .aside { position: static; }
 }
 @media (max-width: 700px) {
   body { font-size: 16px; }
-  .nav { gap: .8rem; }
-  .nav a { font-size: .62rem; letter-spacing: .12em; }
+  .topbar { gap: .7rem; padding: .7rem .9rem; }
+  .brand { gap: .4rem; }
+  .brand__word { font-size: .54rem; letter-spacing: .04em; }
+  .nav { gap: .55rem; }
+  .nav a { font-size: .58rem; letter-spacing: .06em; }
+  .toggle { width: 30px; height: 30px; }
+  .hero__glow--a, .hero__glow--b { width: 80vw; height: 80vw; }
+  .hero__lede { padding-left: 1rem; }
+  .footer__grid { gap: 1rem; }
   .track { grid-template-columns: 2.2rem minmax(0, 1fr) 3.4rem; }
   .track__artist { grid-column: 2 / -1; }
   .track__score { grid-row: 1; grid-column: 3; }
   .pager { grid-template-columns: 1fr; }
   .pager .next { text-align: left; }
   .hero { min-height: auto; }
+}
+/* 窄屏手机：把顶栏再收紧一档，为等宽字体的回退字体留出余量，避免 ABOUT 被挤出视口 */
+@media (max-width: 480px) {
+  .topbar { gap: .5rem; padding: .6rem .7rem; }
+  .brand { gap: .35rem; }
+  .brand__disc { width: 18px; height: 18px; }
+  .brand__word { font-size: .5rem; letter-spacing: 0; }
+  .nav { gap: .45rem; }
+  .nav a { font-size: .54rem; letter-spacing: 0; }
+  .toggle { width: 26px; height: 26px; }
+  .toggle svg { width: 13px; height: 13px; }
+  .wave { height: 34px; }
 }
 @media print {
   .topbar, .grain, .scanlines, .vinyl, .progress, .marquee { display: none; }

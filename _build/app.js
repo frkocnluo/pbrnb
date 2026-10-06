@@ -1,4 +1,4 @@
-/* PBRNB — interactions
+/* ALTERNATIVE R&B（仓库名 pbrnb）— interactions
    theme toggle · scroll reveal · reading progress · waveform · marquee · filter */
 (() => {
   "use strict";

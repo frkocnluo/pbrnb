@@ -1,17 +1,18 @@
-/* PBRNB — 站点数据
-   这里只放可核验的元信息与我自己的评分；正文由 _build/reviews/*.json 提供。 */
+/* PBRNB(旧站名) — 站点数据
+   站名已于本次改版从 PBRNB 改为 ALTERNATIVE R&B；仓库名与部署路径保持 pbrnb 不变。 */
 
 export const site = {
-  name: "PBRNB",
-  wordmark: "PBRNB",
+  name: "ALTERNATIVE R&B",
+  wordmark: "ALTERNATIVE R&B",
+  formerName: "PBRNB",
   tagline: "低音、留白与失真",
   description:
-    "PBRNB 是一份关于另类 R&B（PBR&B）的独立乐评档案：专辑长评、术语考据与聆听笔记。不做算法推荐，只写下判断。",
+    "一份关于另类 R&B（alternative R&B，2010 年代曾被叫作 PBR&B）的独立乐评档案：专辑长评、术语考据与聆听笔记。不做算法推荐，只写下判断。",
   // 部署地址（GitHub Pages 项目站点）
   url: "https://frkocnluo.github.io/pbrnb",
   repo: "https://github.com/frkocnluo/pbrnb",
   locale: "zh-CN",
-  author: "PBRNB",
+  author: "ALTERNATIVE R&B",
 };
 
 /* 首页滚动条：厂牌 / 艺人 / 声音关键词 */

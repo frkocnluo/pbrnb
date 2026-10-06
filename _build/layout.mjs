@@ -1,4 +1,4 @@
-/* PBRNB — HTML 渲染层（无依赖静态生成） */
+/* ALTERNATIVE R&B（仓库名 pbrnb）— HTML 渲染层（无依赖静态生成） */
 import { site, nav, marquee } from "./data.mjs";
 
 export const esc = (s = "") =>
@@ -33,7 +33,7 @@ const FAVICON =
 export function page({ title, description, path, current, depth = 0, body, bodyClass = "" }) {
   const p = up(depth);
   const url = site.url.replace(/\/$/, "") + "/" + path;
-  const full = title ? `${title} — ${site.name}` : `${site.name} · ${site.tagline}`;
+  const full = title ? `${title} · ${site.name}` : `${site.name} · ${site.tagline}`;
   const navHtml = nav
     .map((n) => {
       const isCurrent = current === n.href;
@@ -77,7 +77,7 @@ export function page({ title, description, path, current, depth = 0, body, bodyC
 <header class="topbar">
   <a class="brand" href="${p}index.html" aria-label="${esc(site.name)} 首页">
     <span class="brand__disc" aria-hidden="true"></span>
-    <span class="brand__word">PBR<b>NB</b></span>
+    <span class="brand__word">ALTERNATIVE <b>R&amp;B</b></span>
   </a>
   <nav class="nav" aria-label="主导航">${navHtml}</nav>
   <button class="toggle" type="button" data-theme-toggle aria-label="切换日间/夜间模式">
@@ -89,7 +89,7 @@ ${body}
 <footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
-      <div class="footer__word" aria-hidden="true">PBRNB</div>
+      <div class="footer__word" aria-hidden="true">ALTERNATIVE<br>R&amp;B</div>
       <div class="footer__meta">
         <span>${esc(site.tagline)} · 另类 R&amp;B 乐评档案</span>
         <span>© <span data-year>2026</span> ${esc(site.name)} · 文字原创，转载请注明出处</span>
@@ -120,7 +120,7 @@ export function cover(entry, { tag = "" } = {}) {
   const { from, to, art } = entry.cover;
   return `<div class="cover cover--hover" style="background:linear-gradient(150deg, ${from}, ${to})">
     <div class="cover__art cover__art--${art}"></div>
-    <span class="cover__tag">${esc(tag || "PBRNB")}</span>
+    <span class="cover__tag">${esc(tag || site.name)}</span>
   </div>`;
 }
 
@@ -149,7 +149,7 @@ export function card(entry, depth = 0) {
   const tagStr = [...(entry.tags || []), entry.artist].join(",");
   return `<article class="card" data-reveal data-tags="${esc(tagStr)}">
     <a href="${p}reviews/${entry.slug}.html" aria-label="${esc(entry.artist)} — ${esc(entry.title)}">
-      ${cover(entry, { tag: entry.kind === "feature" ? "PBRNB · 专题" : `PBRNB · ${entry.year}` })}
+      ${cover(entry, { tag: entry.kind === "feature" ? "专题 · FEATURE" : String(entry.year) })}
     </a>
     <span class="card__artist">${esc(entry.artist)}</span>
     <h3 class="card__title"><a href="${p}reviews/${entry.slug}.html">${esc(entry.title)}</a></h3>

@@ -1,4 +1,4 @@
-/* PBRNB — 静态站点生成器
+/* ALTERNATIVE R&B（仓库名 pbrnb）— 静态站点生成器
    用法：node _build/build.mjs
    读取 _build/reviews/*.json（正文）+ _build/data.mjs（元信息）→ 输出到仓库根目录。 */
 import { readFile, writeFile, mkdir, copyFile, readdir } from "node:fs/promises";
@@ -58,9 +58,9 @@ const hero = `<section class="hero" id="top">
   <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
   <div class="wrap hero__grid">
     <div>
-      <p class="hero__kicker">另类 R&amp;B 乐评档案 · ALTERNATIVE R&amp;B ARCHIVE</p>
-      <h1 class="hero__title">PBR<em>NB</em><span class="sub">低音、留白与失真</span></h1>
-      <p class="hero__lede">PBR&B 原本是一个啤酒玩笑。我们把这个玩笑留下来，用它指认一类把 R&amp;B 拆开重装的声音：被位移的人声、被拉长的混响、被留白的副歌。这里记录它们的来处，也记录它们的代价。</p>
+      <p class="hero__kicker">ALTERNATIVE R&amp;B · 另类 R&amp;B 乐评档案</p>
+      <h1 class="hero__title">ALTERNATIVE<em>R&amp;B</em><span class="sub">低音、留白与失真</span></h1>
+      <p class="hero__lede">这个名字一开始是个玩笑：2010 年代初，英文媒体用 PBR&amp;B 概称一批难以归类的创作者。我们不再沿用那个玩笑做招牌，但继续记录它划出的声音地带——被位移的人声、被拉长的混响、被留白的副歌。这里写它们的来处，也写它们的代价。</p>
       <div class="hero__meta">
         <span>档案条目<b>${docs.length}</b></span>
         <span>正文约<b>${(totalChars / 10000).toFixed(1)} 万字</b></span>
@@ -78,7 +78,7 @@ const featuredSection = featured
     <p class="eyebrow"><span class="n">本期主评</span> FEATURED REVIEW</p>
     <div class="featured" data-reveal>
       <a href="reviews/${featured.slug}.html" aria-label="${esc(featured.artist)} — ${esc(featured.title)}">
-        ${cover(featured, { tag: `PBRNB · ${featured.released}` })}
+        ${cover(featured, { tag: `ALTERNATIVE R&B · ${featured.released}` })}
       </a>
       <div>
         <div class="score-block">
@@ -168,7 +168,7 @@ await writeFile(
   path.join(root, "reviews", "index.html"),
   page({
     title: "乐评档案",
-    description: "PBRNB 全部专辑乐评索引：Frank Ocean、The Weeknd、Solange、SZA、Kelela，以及关于 PBR&B 标签本身的专题。",
+    description: "ALTERNATIVE R&B 全部专辑乐评索引：Frank Ocean、The Weeknd、Solange、SZA、Kelela，以及关于 PBR&B 这个标签本身的专题。",
     path: "reviews/index.html",
     current: "reviews/index.html",
     depth: 1,
@@ -187,7 +187,7 @@ function renderAside(d) {
     .map((l) => `<a href="${esc(l.url)}" rel="noopener">${esc(l.label)}</a>`)
     .join("");
   return `<aside class="aside" data-reveal>
-    ${cover(d, { tag: d.kind === "feature" ? "PBRNB · 专题" : `PBRNB · ${d.year}` })}
+    ${cover(d, { tag: d.kind === "feature" ? "专题 · FEATURE" : String(d.year) })}
     ${
       d.score
         ? `<div class="score-block"><span class="score">${scoreOf(d.score)}</span><span class="score.out-of">/ 10</span></div>
@@ -293,7 +293,8 @@ const aboutBody = `<main>
       <div class="prose">
         <section>
           <h2><span class="idx">01</span>这是什么</h2>
-          <p>PBRNB 是一份个人乐评档案，只写一件事：另类 R&amp;B —— 那个曾经被叫作 PBR&amp;B 的声音地带。这里的每一篇都是原创长评，写作方式参照英文音乐媒体的批评传统：先交代语境，再描述具体的声音，然后进入歌词与结构，最后给出判断，并且必须包含具体的保留意见。</p>
+          <p>ALTERNATIVE R&amp;B 是一份个人乐评档案，只写一件事：另类 R&amp;B —— 2010 年代曾被叫作 PBR&amp;B 的那片声音地带。这里的每一篇都是原创长评，写作方式参照英文音乐媒体的批评传统：先交代语境，再描述具体的声音，然后进入歌词与结构，最后给出判断，并且必须包含具体的保留意见。</p>
+          <p>本站曾用名 PBRNB，那是把 PBR&amp;B 这个玩笑挪用作招牌的做法。改名不是因为 alternative 更准确，而是因为招牌上的玩笑总会比文章里的批评传播得更远——一个写作者不该让前者替后者说话。这段改名的理由写在那篇专题的最后一节里。</p>
           <p>本站不使用任何受版权保护的唱片封面原图。页面上的「封面」都是按专辑气质生成的抽象色块与几何图形，仅用于版面识别。</p>
         </section>
         <section>
@@ -338,7 +339,8 @@ const aboutBody = `<main>
         <div>
           <h3>站点信息</h3>
           <dl>
-            <div><dt>名称</dt><dd>PBRNB</dd></div>
+            <div><dt>名称</dt><dd>ALTERNATIVE R&amp;B（另类 R&amp;B 乐评档案）</dd></div>
+            <div><dt>曾用名</dt><dd>PBRNB</dd></div>
             <div><dt>主题</dt><dd>另类 R&amp;B（PBR&amp;B）</dd></div>
             <div><dt>条目</dt><dd>${docs.length} 篇 · 约 ${(totalChars / 10000).toFixed(1)} 万字</dd></div>
             <div><dt>技术</dt><dd>零依赖静态站点 · GitHub Pages</dd></div>
@@ -365,7 +367,7 @@ await writeFile(
   path.join(root, "about.html"),
   page({
     title: "关于与评分标准",
-    description: "PBRNB 的编辑方针、10 分制评分标准、事实与引用原则，以及可核验的参考文献。",
+    description: "ALTERNATIVE R&B 的编辑方针、10 分制评分标准、事实与引用原则，以及可核验的参考文献。",
     path: "about.html",
     current: "about.html",
     body: aboutBody,

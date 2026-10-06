@@ -1,4 +1,4 @@
-/* PBRNB — 本地预览服务器（零依赖）
+/* ALTERNATIVE R&B（仓库名 pbrnb）— 本地预览服务器（零依赖）
    用法：node _build/serve.mjs [port] */
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
@@ -55,5 +55,5 @@ createServer(async (req, res) => {
     res.end("500 " + err.message);
   }
 }).listen(port, "127.0.0.1", () => {
-  console.log(`[serve] PBRNB 预览： http://127.0.0.1:${port}/  (根目录 ${root})`);
+  console.log(`[serve] ALTERNATIVE R&B 预览： http://127.0.0.1:${port}/  (根目录 ${root})`);
 });

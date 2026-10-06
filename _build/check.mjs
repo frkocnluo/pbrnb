@@ -1,4 +1,4 @@
-/* PBRNB — 自检：内部链接、资源引用、正文 JSON 结构
+/* ALTERNATIVE R&B（仓库名 pbrnb）— 自检：内部链接、资源引用、正文 JSON 结构
    用法：node _build/check.mjs  */
 import { readFile, readdir, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -13,7 +13,7 @@ const note = [];
 
 async function walk(dir, out = []) {
   for (const e of await readdir(dir, { withFileTypes: true })) {
-    if (e.name === ".git" || e.name === "_build" || e.name === "node_modules" || e.name === ".tools") continue;
+    if (e.name === ".git" || e.name === "_build" || e.name === "node_modules" || e.name === ".tools" || e.name === ".preview") continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) await walk(p, out);
     else out.push(p);
