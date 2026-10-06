@@ -116,10 +116,15 @@ export function vinyl() {
   </div>`;
 }
 
-export function cover(entry, { tag = "" } = {}) {
-  const { from, to, art } = entry.cover;
-  return `<div class="cover cover--hover" style="background:linear-gradient(150deg, ${from}, ${to})">
-    <div class="cover__art cover__art--${art}"></div>
+export function cover(entry, { tag = "", p = "" } = {}) {
+  const { from = "#07080a", to = "#1a1f26", art = "halo", image } = entry.cover || {};
+  const imgHtml = image
+    ? `<img class="cover__img" src="${p}${image}" alt="${esc(entry.title)}" loading="lazy" decoding="async" />`
+    : `<div class="cover__art cover__art--${art}"></div>`;
+  const bgStyle = from && to ? ` style="background:linear-gradient(150deg, ${from}, ${to})"` : "";
+  return `<div class="cover cover--hover"${bgStyle}>
+    ${imgHtml}
+    <div class="cover__overlay" aria-hidden="true"></div>
     <span class="cover__tag">${esc(tag || site.name)}</span>
   </div>`;
 }
@@ -149,7 +154,7 @@ export function card(entry, depth = 0) {
   const tagStr = [...(entry.tags || []), entry.artist].join(",");
   return `<article class="card" data-reveal data-tags="${esc(tagStr)}">
     <a href="${p}reviews/${entry.slug}.html" aria-label="${esc(entry.artist)} — ${esc(entry.title)}">
-      ${cover(entry, { tag: entry.kind === "feature" ? "专题 · FEATURE" : String(entry.year) })}
+      ${cover(entry, { tag: entry.kind === "feature" ? "专题 · FEATURE" : String(entry.year), p })}
     </a>
     <span class="card__artist">${esc(entry.artist)}</span>
     <h3 class="card__title"><a href="${p}reviews/${entry.slug}.html">${esc(entry.title)}</a></h3>

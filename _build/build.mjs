@@ -187,7 +187,7 @@ function renderAside(d) {
     .map((l) => `<a href="${esc(l.url)}" rel="noopener">${esc(l.label)}</a>`)
     .join("");
   return `<aside class="aside" data-reveal>
-    ${cover(d, { tag: d.kind === "feature" ? "专题 · FEATURE" : String(d.year) })}
+    ${cover(d, { tag: d.kind === "feature" ? "专题 · FEATURE" : String(d.year), p: "../" })}
     ${
       d.score
         ? `<div class="score-block"><span class="score">${scoreOf(d.score)}</span><span class="score.out-of">/ 10</span></div>

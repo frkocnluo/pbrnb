@@ -325,23 +325,49 @@ p { margin: 0 0 1.1em; }
 }
 .meta-row b { color: var(--bone-2); font-weight: 500; }
 
-/* cover art (generated) */
+/* cover art & album artwork */
 .cover {
   position: relative; aspect-ratio: 1; width: 100%; overflow: hidden;
   border: 1px solid var(--line-strong); border-radius: var(--r);
   box-shadow: var(--shadow);
   isolation: isolate;
+  background-color: var(--obsidian-2);
+}
+.cover__img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform .7s var(--ease), filter .7s var(--ease);
+}
+.cover--hover:hover .cover__img,
+a:hover > .cover--hover .cover__img {
+  transform: scale(1.05);
+  filter: contrast(1.06) brightness(1.03);
+}
+.cover__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7,8,10,0.02) 0%, rgba(7,8,10,0.55) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 .cover::after {
   content: ""; position: absolute; inset: 0;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: .09; mix-blend-mode: overlay; z-index: 3;
+  opacity: .07; mix-blend-mode: overlay; z-index: 3; pointer-events: none;
 }
 .cover__art { position: absolute; inset: 0; z-index: 1; }
 .cover__tag {
   position: absolute; left: .9rem; bottom: .8rem; z-index: 4;
-  font-family: var(--mono); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase;
-  color: rgba(255,255,255,.82); mix-blend-mode: difference;
+  font-family: var(--mono); font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--bone);
+  background: rgba(7, 8, 10, 0.76);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: .22rem .6rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 .cover__art--rings { background:
   radial-gradient(circle at 50% 50%, transparent 28%, rgba(255,255,255,.1) 28.4%, transparent 29%),
@@ -351,8 +377,8 @@ p { margin: 0 0 1.1em; }
 .cover__art--bars { background: repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 2px, transparent 2px 9px); }
 .cover__art--split { background: linear-gradient(180deg, transparent 49.6%, rgba(255,255,255,.2) 49.6% 50.4%, transparent 50.4%); }
 .cover__art--blur { backdrop-filter: blur(0px); background: conic-gradient(from 210deg at 40% 60%, rgba(255,255,255,.18), transparent 40%); }
-.cover--hover { transition: transform .6s var(--ease), box-shadow .6s var(--ease); }
-a:hover > .cover--hover { transform: translateY(-6px) scale(1.012); box-shadow: var(--shadow), var(--glow-m); }
+.cover--hover { transition: transform .6s var(--ease), box-shadow .6s var(--ease), border-color .6s var(--ease); }
+a:hover > .cover--hover { transform: translateY(-6px) scale(1.012); box-shadow: var(--shadow), var(--glow-m); border-color: rgba(212, 255, 0, 0.4); }
 
 /* ---------- 9. tracklist ---------- */
 .tracklist { border-top: 1px solid var(--line); }

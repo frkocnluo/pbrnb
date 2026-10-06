@@ -48,7 +48,7 @@ export const entries = [
     label: "Boys Don't Cry（独立发行）",
     score: 9.6,
     featured: true,
-    cover: { from: "#1b1030", to: "#ff8a3d", art: "halo" },
+    cover: { from: "#1b1030", to: "#ff8a3d", art: "halo", image: "assets/img/covers/blonde.jpg" },
     credits: "17 首 · 制作：Malay / Om'Mas Keith / Jon Brion 等 · 客串：Beyoncé、André 3000、Kim Burrell、Yung Lean",
     key: "Nikes / Nights / White Ferrari / Seigfried / Godspeed",
     listen: [
@@ -70,7 +70,7 @@ export const entries = [
     released: "2012-07-10",
     label: "Def Jam",
     score: 9.3,
-    cover: { from: "#2b1a06", to: "#ffb057", art: "bars" },
+    cover: { from: "#2b1a06", to: "#ffb057", art: "bars", image: "assets/img/covers/channel-orange.jpg" },
     credits: "17 首 · 客串：Earl Sweatshirt、André 3000 · John Mayer 在 Pyramids 中弹吉他",
     key: "Thinkin Bout You / Pyramids / Super Rich Kids / Bad Religion / Pink Matter",
     listen: [
@@ -91,7 +91,7 @@ export const entries = [
     released: "2016-09-30",
     label: "Saint Records / Columbia",
     score: 9.2,
-    cover: { from: "#12261f", to: "#d9c48a", art: "split" },
+    cover: { from: "#12261f", to: "#d9c48a", art: "split", image: "assets/img/covers/a-seat-at-the-table.jpg" },
     credits: "21 首（含 6 段 interlude）· 首周登顶 Billboard 200",
     key: "Cranes in the Sky / Don't Touch My Hair / Mad / F.U.B.U. / Borderline",
     listen: [
@@ -112,7 +112,7 @@ export const entries = [
     released: "2017-06-09",
     label: "Top Dawg Entertainment / RCA",
     score: 9.1,
-    cover: { from: "#101d33", to: "#7fb2ff", art: "rings" },
+    cover: { from: "#101d33", to: "#7fb2ff", art: "rings", image: "assets/img/covers/ctrl.jpg" },
     credits: "14 首 · 制作：ThankGod4Cody、Carter Lang、Cam O'bi、Scum 等 · TDE 首位女性签约艺人",
     key: "Drew Barrymore / Love Galore / The Weekend / Broken Clocks / 20 Something",
     listen: [
@@ -133,7 +133,7 @@ export const entries = [
     released: "2017-10-06",
     label: "Warp Records",
     score: 9.0,
-    cover: { from: "#1a0a1f", to: "#b06cff", art: "blur" },
+    cover: { from: "#1a0a1f", to: "#b06cff", art: "blur", image: "assets/img/covers/take-me-apart.jpg" },
     credits: "13 首 · 合作：Jam City、Kingdom、Ariel Rechtshaid、Bok Bok 等",
     key: "LMK / Frontline / Waitin / Truth or Dare / Blue Light",
     listen: [
@@ -154,7 +154,7 @@ export const entries = [
     released: "2011-03-21",
     label: "免费 mixtape（后收入 Trilogy 合集）",
     score: 8.9,
-    cover: { from: "#210a12", to: "#ff2e7e", art: "rings" },
+    cover: { from: "#210a12", to: "#ff2e7e", art: "rings", image: "assets/img/covers/house-of-balloons.jpg" },
     credits: "10 首 · 制作：Doc McKinney、Illangelo · 采样 Siouxsie and the Banshees、Beach House",
     key: "High for This / Wicked Games / The Morning / House of Balloons / The Knowing",
     listen: [
@@ -174,7 +174,7 @@ export const entries = [
     year: 2011,
     released: "2011 年前后",
     label: "术语考据",
-    cover: { from: "#0f0b1c", to: "#7a4dff", art: "split" },
+    cover: { from: "#0f0b1c", to: "#7a4dff", art: "split", image: "assets/img/covers/what-is-pbrnb.jpg" },
     tagsExtra: ["术语", "批评"],
     listen: [],
     further: [
