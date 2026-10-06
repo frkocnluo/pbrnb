@@ -21,12 +21,12 @@ export function readingTime(text) {
 }
 
 const FONTS =
-  "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap";
+  "https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap";
 
 const FAVICON =
   "data:image/svg+xml," +
   encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#0c0a13"/><circle cx="16" cy="16" r="11" fill="none" stroke="#7a4dff" stroke-width="1.2"/><circle cx="16" cy="16" r="7" fill="none" stroke="#2a2240" stroke-width="1.2"/><circle cx="16" cy="16" r="3.4" fill="#ff2e7e"/></svg>`
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#07080a"/><circle cx="16" cy="16" r="11" fill="none" stroke="#e2e8f0" stroke-width="1.2"/><circle cx="16" cy="16" r="7" fill="none" stroke="#1d232e" stroke-width="1.2"/><circle cx="16" cy="16" r="3.2" fill="#d4ff00"/></svg>`
   );
 
 /* ---------------- 通用外壳 ---------------- */
@@ -49,7 +49,7 @@ export function page({ title, description, path, current, depth = 0, body, bodyC
 <title>${esc(full)}</title>
 <meta name="description" content="${esc(description || site.description)}">
 <meta name="author" content="${esc(site.author)}">
-<meta name="theme-color" content="#07060a">
+<meta name="theme-color" content="#07080a">
 <link rel="canonical" href="${esc(url)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(site.name)}">
