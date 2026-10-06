@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>PBRNB · 低音、留白与失真</title>
+  <link>https://frkocnluo.github.io/pbrnb/</link>
+  <description>PBRNB 是一份关于另类 R&amp;B（PBR&amp;B）的独立乐评档案：专辑长评、术语考据与聆听笔记。不做算法推荐，只写下判断。</description>
+  <language>zh-cn</language>
+  <atom:link href="https://frkocnluo.github.io/pbrnb/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Frank Ocean — Blonde</title>
+    <link>https://frkocnluo.github.io/pbrnb/reviews/blonde.html</link>
+    <guid isPermaLink="true">https://frkocnluo.github.io/pbrnb/reviews/blonde.html</guid>
+    <pubDate>Sat, 20 Aug 2016 09:00:00 GMT</pubDate>
+    <description>《Blonde》把人声推离身体、把时间剪成碎片，用十七段不肯展开的素材换来一种罕见的距离感。它可能是这十年最被高估的亲密，也是最小心的退后。</description>
+  </item>
+  <item>
+    <title>Frank Ocean — Channel Orange</title>
+    <link>https://frkocnluo.github.io/pbrnb/reviews/channel-orange.html</link>
+    <guid isPermaLink="true">https://frkocnluo.github.io/pbrnb/reviews/channel-orange.html</guid>
+    <pubDate>Tue, 10 Jul 2012 09:00:00 GMT</pubDate>
+    <description>2012 年 7 月 10 日，Frank Ocean 的首张正式专辑由 Def Jam 数字发行，前作是一年前的 mixtape《Nostalgia, Ultra》。它后来被反复当作「另类 R&amp;B」成形的界碑，但它本身更接近一次细腻的语气调整，而非宣言。</description>
+  </item>
+  <item>
+    <title>Solange — A Seat at the Table</title>
+    <link>https://frkocnluo.github.io/pbrnb/reviews/a-seat-at-the-table.html</link>
+    <guid isPermaLink="true">https://frkocnluo.github.io/pbrnb/reviews/a-seat-at-the-table.html</guid>
+    <pubDate>Fri, 30 Sep 2016 09:00:00 GMT</pubDate>
+    <description>2016年的《A Seat at the Table》把黑人身份、创伤与自我照护写进同一张唱片，也用克制的编曲与口述间奏把私人经验变成一种集体的发言，并让自我照护获得公开的分量。</description>
+  </item>
+  <item>
+    <title>SZA — Ctrl</title>
+    <link>https://frkocnluo.github.io/pbrnb/reviews/ctrl.html</link>
+    <guid isPermaLink="true">https://frkocnluo.github.io/pbrnb/reviews/ctrl.html</guid>
+    <pubDate>Fri, 09 Jun 2017 09:00:00 GMT</pubDate>
+    <description>在一个以硬度著称的说唱厂牌里，SZA 的首张专辑把不安全感放在了正中央。它不像一份宣言，更像一个人在深夜反复修改、始终没有定稿的自我描述。</description>
+  </item>
+  <item>
+    <title>Kelela — Take Me Apart</title>
+    <link>https://frkocnluo.github.io/pbrnb/reviews/take-me-apart.html</link>
+    <guid isPermaLink="true">https://frkocnluo.github.io/pbrnb/reviews/take-me-apart.html</guid>
+    <pubDate>Fri, 06 Oct 2017 09:00:00 GMT</pubDate>
+    <description>在俱乐部音乐的冷硬框架里，Kelela把人声放在一个既不在中心、也不退场的位置。《Take Me Apart》把这种距离感展开成完整的长篇，也把一段关系的破裂写成一份克制的记录。</description>
+  </item>
+  <item>
+    <title>The Weeknd — House of Balloons</title>
+    <link>https://frkocnluo.github.io/pbrnb/reviews/house-of-balloons.html</link>
+    <guid isPermaLink="true">https://frkocnluo.github.io/pbrnb/reviews/house-of-balloons.html</guid>
+    <pubDate>Mon, 21 Mar 2011 09:00:00 GMT</pubDate>
+    <description>2011年3月的一份免费 mixtape，用拉长的混响、被压暗的采样与夜间叙事，为另类 R&amp;B 定下了一个被反复参照的姿态；它的模糊既是力量，也是日后的困局。</description>
+  </item>
+  <item>
+    <title>专题 — 一个啤酒玩笑，如何变成一种流派名</title>
+    <link>https://frkocnluo.github.io/pbrnb/reviews/what-is-pbrnb.html</link>
+    <guid isPermaLink="true">https://frkocnluo.github.io/pbrnb/reviews/what-is-pbrnb.html</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>一个啤酒玩笑在 2011 年前后变成了一批音乐人的名字。这篇文章想弄清楚：当「另类 R&amp;B」被写进标题、写进档案、写进我们自己的栏目分类时，我们究竟在命名什么，又在替谁说话。</description>
+  </item>
+</channel>
+</rss>

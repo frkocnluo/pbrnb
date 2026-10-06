@@ -1,0 +1,5 @@
+# 忽略本地预览产物与依赖
+.preview/
+node_modules/
+.DS_Store
+Thumbs.db

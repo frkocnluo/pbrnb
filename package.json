@@ -1,0 +1,14 @@
+{
+  "name": "pbrnb",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PBRNB — 另类 R&B（PBR&B）乐评档案。零依赖静态站点，部署于 GitHub Pages。",
+  "scripts": {
+    "build": "node _build/build.mjs",
+    "serve": "node _build/serve.mjs",
+    "dev": "node _build/build.mjs && node _build/serve.mjs"
+  },
+  "keywords": ["alternative-rnb", "pbrnb", "music-criticism", "static-site", "github-pages"],
+  "license": "CC-BY-NC-4.0"
+}
